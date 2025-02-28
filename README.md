@@ -2,7 +2,7 @@
 
 Jupyter Python notebook for the [tblastn-genomes](https://github.com/michalbukowski/tblastn-genomes) pipeline output analysis and visualisation. For a broader context see the following publication:
 
-Bukowski M, Banasik M, Chlebicka K, Bednarczyk K, Bonar E, Sokołowska D, Żądło T, Dubin G, Władyka B. _Analysis of co-occurrence of type II toxin–antitoxin systems and antibiotic resistance determinants in Staphylococcus aureus_. mSystems 0:e00957-24.
+Bukowski M, Banasik M, Chlebicka K, Bednarczyk K, Bonar E, Sokołowska D, Żądło T, Dubin G, Władyka B. (2025) _Analysis of co-occurrence of type II toxin–antitoxin systems and antibiotic resistance determinants in Staphylococcus aureus_. mSystems 0:e00957-24.
 https://doi.org/10.1128/msystems.00957-24
 
 The analysis utilises CARD data (located in the input directory):

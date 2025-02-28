@@ -5,7 +5,7 @@
 # Distributed under GPL-3.0 license
 # This notebook is a part of the TAS-Drug repository and is associated with the following study:
 # Bukowski M, Banasik M, Chlebicka K, Bednarczyk K, Bonar E, Sokołowska D, Żądło T,
-# Dubin G, Władyka B. Analysis of co-occurrence of type II toxin–antitoxin systems
+# Dubin G, Władyka B. (2025) Analysis of co-occurrence of type II toxin–antitoxin systems
 # and antibiotic resistance determinants in Staphylococcus aureus. mSystems 0:e00957-24.
 # https://doi.org/10.1128/msystems.00957-24
 
@@ -13,14 +13,14 @@
 # of genes in loci and loci in assemblies (genomes)
 
 class Gene:
-    def __init__(self, name, start, end, qcovs, ppos):
+    def __init__(self, name: str, start: int, end: int, qcovs: float, ppos: float):
         '''Requires 5 arguments describing a sequnece that
            is a translated BLAST hit:
-           name  -- gene name
-           start -- start coordinate in the source DNA sequence
-           end   -- end coordinate in the source DNA sequence
-           qcovs -- protein query coverage
-           ppos  -- protein sequence similarity
+           name: str    -- gene name
+           start: int   -- start coordinate in the source DNA sequence
+           end: int     -- end coordinate in the source DNA sequence
+           qcovs: float -- protein query coverage
+           ppos: float  -- protein sequence similarity
         '''
         self.name   = name
         self.start  = start
@@ -32,13 +32,13 @@ class Gene:
         return f'{self.name}({self.ppos})'
 
 class Locus:
-    def __init__(self, name, acc, strand, genes):
+    def __init__(self, name: str, acc: str, strand: int, genes: list[Gene]):
         '''Requires 4 arguments describing a locus:
-           name   -- locus name
-           acc    -- accession number of the source DNA sequence
-           strand -- source DNA sequence strand
-           genes  -- a list of genes belonging to the locus
-                     (object of the Gene type)
+           name: str          -- locus name
+           acc: str           -- accession number of the source DNA sequence
+           strand: int        -- source DNA sequence strand
+           genes: list[Gene]  -- a list of genes belonging to the locus
+                                 (object of the Gene type)
         '''
         self.name   = name
         self.acc    = acc
@@ -49,12 +49,12 @@ class Locus:
         return '/'.join(repr(gene) for gene in self.genes)
 
 class Assembly:
-    def __init__(self, asmid):
+    def __init__(self, asmid: str):
         '''Contains two empty lists that are to be populated by references
            to Locus type objects and store information on TA systems and
            drug resistance determinants found in a given assembly (genome).
            Requires 1 argument describing a blank assembly (genome):
-           asmid -- assembly accession number
+           asmid: str -- assembly accession number
         '''
         self.asmid = asmid
         self.tas   = []

@@ -6,7 +6,7 @@
 # Distributed under GPL-3.0 license
 # This notebook is a part of the TAS-Drug repository and is associated with the following study:
 # Bukowski M, Banasik M, Chlebicka K, Bednarczyk K, Bonar E, Sokołowska D, Żądło T,
-# Dubin G, Władyka B. Analysis of co-occurrence of type II toxin–antitoxin systems
+# Dubin G, Władyka B. (2025) Analysis of co-occurrence of type II toxin–antitoxin systems
 # and antibiotic resistance determinants in Staphylococcus aureus. mSystems 0:e00957-24.
 # https://doi.org/10.1128/msystems.00957-24
 

@@ -5,7 +5,7 @@
 # Distributed under GPL-3.0 license
 # This notebook is a part of the TAS-Drug repository and is associated with the following study:
 # Bukowski M, Banasik M, Chlebicka K, Bednarczyk K, Bonar E, Sokołowska D, Żądło T,
-# Dubin G, Władyka B. Analysis of co-occurrence of type II toxin–antitoxin systems
+# Dubin G, Władyka B. (2025) Analysis of co-occurrence of type II toxin–antitoxin systems
 # and antibiotic resistance determinants in Staphylococcus aureus. mSystems 0:e00957-24.
 # https://doi.org/10.1128/msystems.00957-24
 
@@ -15,12 +15,12 @@ from collections import defaultdict
 from scipy.stats import hypergeom
 from matplotlib import pyplot as plt
 
-def fetch_seqids(fpath: str) -> list:
+def fetch_seqids(fpath: str) -> list[str]:
     '''Scans a FASTA format file for IDs of sequence records present in that file.
        Arguments:
-       fpath: str   -- a path to a FASTA format file with sequences
+       fpath: str        -- a path to a FASTA format file with sequences
        Returns:
-       seqids: list -- a list with IDs for all sequences found in the file
+       seqids: list[str] -- a list with IDs for all sequences found in the file
     '''
     
     seqids = []
@@ -77,13 +77,13 @@ def hyper(sample_cases: int, sample_size: int, total_cases: int, total_size: int
         return prob_2
 
 
-def get_color(ratio: float) -> np.ndarray:
+def get_color(ratio: float) -> np.ndarray[ [float, float, float] ]:
     '''Maps a normalised ratio value (in a range -1.0 to 1.0) to a blue-red color scale.
        Arguments:
        ratio: float -- a normalised ration value from a -1.0 to 1.0 range.
        Returns:
-       color: np.ndarray[float, float, float] -- an Numpy Array with RGB color values
-                                                 mapped to 0.0 to 1.0 range.
+       color: np.ndarray[ [float, float, float] ] -- an Numpy Array with RGB color values
+                                                     mapped to 0.0 to 1.0 range.
     '''
     
     if ratio == 0.0:
