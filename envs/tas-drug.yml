@@ -1,0 +1,12 @@
+name: tas-drug
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - conda-forge::python=3.11.*
+  - conda-forge::numpy=1.26.*
+  - conda-forge::pandas=2.2.*
+  - conda-forge::matplotlib=3.7.*
+  - conda-forge::scipy=1.10.*
+  - conda-forge::jupyterlab=4.0.*
+
